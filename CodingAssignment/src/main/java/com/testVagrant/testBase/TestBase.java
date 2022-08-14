@@ -6,6 +6,7 @@ package com.testVagrant.testBase;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -74,8 +75,9 @@ public class TestBase {
 		driver.switchTo().parentFrame();
 		
 		//Google Search movie
-		driver.findElement(By.name("q")).sendKeys("Pushpa: The Rise");
-		driver.findElement(By.xpath("//input[@name=\"btnK\"]")).click();
+		WebElement g_search = driver.findElement(By.name("q"));
+		g_search.sendKeys("Pushpa: The Rise");
+		g_search.sendKeys(Keys.ENTER);
 		
 		
 		
